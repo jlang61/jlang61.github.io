@@ -52,7 +52,7 @@ export default function Component() {
               </h3>
               <p className="text-sm text-gray-500">
                 A simple weather app built using React. It displays the current
-                weather based on the user's location.
+                weather based on the user&apos;s location.
               </p>
             </div>
             <div className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
@@ -83,7 +83,7 @@ export default function Component() {
               </h3>
               <p className="text-sm text-gray-500">
                 A simple weather app built using React. It displays the current
-                weather based on the user's location.
+                weather based on the user&apos;s location.
               </p>
             </div>
           </div>
