@@ -3,16 +3,11 @@
  * @see https://v0.dev/t/BsPSlUwqWOD
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import Mailing from "@/components/Mailing";
 
 import Link from "next/link";
 import Image from "next/image";
 import ProjectInfo from "@/data/project";
-import { Mail } from "lucide-react";
 import About from "@/components/About";
 
 export default function Component() {
@@ -33,24 +28,20 @@ export default function Component() {
           <div className="mx-auto grid max-w-3xl items-start gap-6 lg:max-w-5xl lg:grid-cols-2 xl:gap-8">
             {ProjectInfo.map((project) => (
               <div key={project.id}>
-                <div className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-black/30 backdrop-blur z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <Link className="h-8 w-8 mr-4" href={project.href}>
-                    <Image
-                      alt="Project thumbnail"
-                      className="object-cover"
-                      height="250"
-                      src={project.imageRef}
-                      style={{
-                        aspectRatio: "500/250",
-                        objectFit: "cover",
-                      }}
-                      width="500"
-                    />
-                  </Link>
-                </div>
+                <Link className="h-8 w-8 mr-4" href={project.href}>
+                  <Image
+                    alt="Project thumbnail"
+                    className="object-cover"
+                    height="250"
+                    src={project.imageRef}
+                    style={{
+                      aspectRatio: "500/250",
+                      objectFit: "cover",
+                    }}
+                    width="500"
+                  />
+                </Link>
+
                 <div className="grid gap-1">
                   <h3 className="text-xl font-semibold">{project.name}</h3>
                   <div className="text-sm text-gray-500">
@@ -73,7 +64,7 @@ export default function Component() {
                 "I've learned a lot through mentors, peers, and hours of non-stop debugging. \n    Currently, these are the skills that I have learned and feel proficient in!"
               }
             </p>
-            <ul className="text-gray-500 list-disc">
+            <ul className="text-gray-500 list-disc ml-8">
               <li>React</li>
               <li>Tailwind CSS</li>
               <li>Python</li>
