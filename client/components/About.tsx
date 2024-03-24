@@ -11,7 +11,7 @@ export default function About() {
         <div className="lg:col-span-1 flex justify-center">
           <div className="w-48 h-48 relative">
             <Image
-              alt="Profile Picture"
+              alt="Profgitile Picture"
               className="rounded-full object-cover"
               src="/pfp.png"
               fill
@@ -19,8 +19,8 @@ export default function About() {
           </div>
         </div>
         <div className="lg:col-span-2 space-y-4">
-          <h1 className="text-3xl font-bold">About Me</h1>
-          <div className="text-gray-500">
+          <h1 className="md:text-center lg:text-left text-5xl font-bold">About Me</h1>
+          <div className="mx-auto tracking:tighter md:text-center lg:text-left text-gray-500">
             I&apos;m a third year UC Santa Barbara student currently studying Computer Science with a Data Science Minor!
           </div>
         </div>

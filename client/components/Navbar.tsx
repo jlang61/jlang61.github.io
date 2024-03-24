@@ -31,7 +31,7 @@ export default function Component() {
               Projects
             </Link>
             <Link className="font-semibold hover:underline" href="/">
-              
+              What
             </Link>
             <Link
               className="font-semibold hover:underline"
