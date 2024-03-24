@@ -9,6 +9,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Mailing from "@/components/Mailing";
 
+import Link from "next/link";
+import Image from "next/image";
+import ProjectInfo from "@/data/project";
+import { Mail } from "lucide-react";
+
 export default function Component() {
   return (
     <div>
@@ -16,84 +21,48 @@ export default function Component() {
         <div className="grid gap-6 px-4 md:px-6">
           <div className="space-y-2 text-center">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Projects by Jenny Lake
+              My Projects
             </h1>
-            <p className="mx-auto max-w-2xl text-gray-500 md:text-xl/relaxed">
+            {/* <p className="mx-auto max-w-2xl text-gray-500 md:text-xl/relaxed">
               Computer Science student passionate about coding. Here are some of
               my favorite projects.
-            </p>
+            </p> */}
           </div>
           <div className="mx-auto grid max-w-3xl items-start gap-6 lg:max-w-5xl lg:grid-cols-2 xl:gap-8">
-            <div className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="absolute inset-0 bg-black/30 backdrop-blur z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <Button
-                  className="z-20 translate-y-[-10] group-hover:translate-y-0"
-                  variant="outline"
-                >
-                  View Details
-                </Button>
+            {ProjectInfo.map((project) => (
+              <div key={project.id}>
+                <div className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/30 backdrop-blur z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <a href={project.href}>
+                    <Image
+                      alt="Project thumbnail"
+                      className="object-cover"
+                      height="250"
+                      src={project.imageRef}
+                      style={{
+                        aspectRatio: "500/250",
+                        objectFit: "cover",
+                      }}
+                      width="500"
+                    />
+                  </a>
+                </div>
+                <div className="grid gap-1">
+                  <h3 className="text-xl font-semibold">{project.name}</h3>
+                  <p className="text-sm text-gray-500">{project.description}</p>
+                </div>
               </div>
-              <img
-                alt="Project thumbnail"
-                className="object-cover"
-                height="250"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "500/250",
-                  objectFit: "cover",
-                }}
-                width="500"
-              />
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-xl font-semibold">
-                Weather App: A Simple React Application
-              </h3>
-              <p className="text-sm text-gray-500">
-                A simple weather app built using React. It displays the current
-                weather based on the user&apos;s location.
-              </p>
-            </div>
-            <div className="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="absolute inset-0 bg-black/30 backdrop-blur z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <Button
-                  className="z-20 translate-y-[-10] group-hover:translate-y-0"
-                  variant="outline"
-                >
-                  View Details
-                </Button>
-              </div>
-              <img
-                alt="Project thumbnail"
-                className="object-cover"
-                height="250"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "500/250",
-                  objectFit: "cover",
-                }}
-                width="500"
-              />
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-xl font-semibold">
-                Weather App: A Simple React Application
-              </h3>
-              <p className="text-sm text-gray-500">
-                A simple weather app built using React. It displays the current
-                weather based on the user&apos;s location.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="py-12 lg:py-24">
-        <div className="grid gap-6 px-4 md:px-6">
+      <div className="flex justify-center grid-col-2 py-12 lg:py-24">
+        <div className="col-span-1 gap-6 px-4 md:px-6">
           <div className="mx-auto max-w-2xl space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Weather App: A Simple React Application
+              Languages and Skills
             </h2>
             <p className="text-gray-500">Technologies used:</p>
             <ul className="text-gray-500 list-disc">
@@ -102,36 +71,13 @@ export default function Component() {
               <li>Tailwind CSS</li>
             </ul>
           </div>
-          <div className="mx-auto max-w-3xl space-y-4">
-            <div className="grid gap-4">
-              <img
-                alt="Project thumbnail"
-                className="overflow-hidden rounded-lg object-cover aspect-[2/1] dark:filter dark:grayscale dark:blur-md"
-                height="400"
-                src="/placeholder.svg"
-                width="800"
-              />
-            </div>
-          </div>
-          <div className="mx-auto max-w-3xl space-y-4">
-            <div className="prose prose-gray prose-lg dark:prose-invert md:prose-lg/relaxed lg:prose-xl/relaxed">
-              <p>
-                The Weather App is a simple React application that allows users
-                to check the current weather based on their location. The app
-                uses the OpenWeather API to fetch weather data and displays it
-                in a user-friendly interface.
-              </p>
-              <p>
-                Users can enter the name of their city or allow the app to
-                access their location automatically. The app then retrieves the
-                current weather conditions, including temperature, humidity, and
-                wind speed, and displays the information on the page.
-              </p>
-            </div>
+        </div>
+        <div className="col-span-1 gap-6 px-4 md:px-6">
+          <div className="mx-auto max-w-2xl space-y-2">
+            <Mailing />
           </div>
         </div>
       </div>
-      <Mailing />
     </div>
   );
 }
