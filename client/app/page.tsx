@@ -9,14 +9,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Mailing from "@/components/Mailing";
 
+
+
 import Link from "next/link";
 import Image from "next/image";
 import ProjectInfo from "@/data/project";
 import { Mail } from "lucide-react";
+import About from "@/components/About";
 
 export default function Component() {
   return (
     <div>
+      <About/>
       <div className="bg-gray-50/95 py-8 lg:py-16">
         <div className="grid gap-6 px-4 md:px-6">
           <div className="space-y-2 text-center">
@@ -51,24 +55,31 @@ export default function Component() {
                 </div>
                 <div className="grid gap-1">
                   <h3 className="text-xl font-semibold">{project.name}</h3>
-                  <p className="text-sm text-gray-500">{project.description}</p>
+                  <div className="text-sm text-gray-500">{project.description}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="flex justify-center grid-col-2 py-12 lg:py-24">
+      <div className="grid grid-cols-2 justify-center grid-col-2 py-12 lg:py-24">
         <div className="col-span-1 gap-6 px-4 md:px-6">
           <div className="mx-auto max-w-2xl space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold  sm:text-4xl md:text-5xl">
               Languages and Skills
             </h2>
-            <p className="text-gray-500">Technologies used:</p>
+            <p className="text-gray-500 ">
+              {"I've learned a lot through mentors, peers, and hours of non-stop debugging. \n    Currently, these are the skills that I have learned and feel proficient in!"}
+            </p>
             <ul className="text-gray-500 list-disc">
               <li>React</li>
-              <li>OpenWeather API</li>
               <li>Tailwind CSS</li>
+              <li>Python</li>
+              <li>C++</li>
+              <li>Javascript</li>
+              <li>Typescript</li>
+              <li>Next.js</li>
+              <li>Microsoft Azure</li>
             </ul>
           </div>
         </div>

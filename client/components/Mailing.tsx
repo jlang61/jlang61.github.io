@@ -75,7 +75,7 @@ export default function Mailing() {
   };
 
   return (
-    <div className="w-3/5 py-12 lg:py-24">
+    <div className="">
       <div className="px-4 md:px-6">
         <div className="gap-12">
           <div className="space-y-4">
@@ -83,23 +83,21 @@ export default function Mailing() {
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl/none">
                 Talk to me!
               </h1>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 ">
                 For any questions about projects or experience, feel free to
                 reach out to me using the form below!
               </p>
             </div>
             {submissionStatus === "success" && (
-              <div className="text-green-600 dark:text-green-400">
-                Message sent successfully!
-              </div>
+              <div className="text-green-600">Message sent successfully!</div>
             )}
             {submissionStatus === "error" && (
-              <div className="text-red-600 dark:text-red-400">
+              <div className="text-red-600 ">
                 Failed to send message. Please try again later.
               </div>
             )}
             {submissionStatus === "oneTime" && (
-              <div className="text-red-600 dark:text-red-400">
+              <div className="text-red-600">
                 Can only send one message each time. Please refresh and try
                 again
               </div>
@@ -112,7 +110,7 @@ export default function Mailing() {
                       First name
                     </label>
                     <input
-                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400 dark:focus:ring-gray-600"
+                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
                       id="first-name"
                       name="user_name"
                       placeholder="Enter your first name"
@@ -124,7 +122,7 @@ export default function Mailing() {
                       Last name
                     </label>
                     <input
-                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400 dark:focus:ring-gray-600"
+                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
                       id="last-name"
                       name="user_name"
                       placeholder="Enter your last name"
@@ -137,7 +135,7 @@ export default function Mailing() {
                     Email
                   </label>
                   <input
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400 dark:focus:ring-gray-600"
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
                     id="email"
                     name="user_email"
                     placeholder="Enter your email"
@@ -149,7 +147,7 @@ export default function Mailing() {
                     Subject
                   </label>
                   <input
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400 dark:focus:ring-gray-600"
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
                     id="subject"
                     name="subject"
                     placeholder="Enter the subject"
@@ -161,7 +159,7 @@ export default function Mailing() {
                     Message
                   </label>
                   <textarea
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400 dark:focus:ring-gray-600 min-h-[100px]"
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400 min-h-[100px]"
                     id="message"
                     name="message"
                     placeholder="Enter your message"
@@ -169,7 +167,7 @@ export default function Mailing() {
                 </div>
               </div>
               <button
-                className="w-full py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:ring-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="w-full py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:ring-gray-400  "
                 type="submit"
               >
                 Send message
