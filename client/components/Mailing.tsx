@@ -3,7 +3,6 @@
 
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Image from "next/image";
 var oneTime = 1;
 
 export default function Mailing() {
@@ -85,7 +84,8 @@ export default function Mailing() {
                 Talk to me!
               </h1>
               <p className="text-gray-500 dark:text-gray-400">
-                For any questions about projects or experience, feel free to reach out to me using the form below!
+                For any questions about projects or experience, feel free to
+                reach out to me using the form below!
               </p>
             </div>
             {submissionStatus === "success" && (
