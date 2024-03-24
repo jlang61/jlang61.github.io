@@ -9,8 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Mailing from "@/components/Mailing";
 
-
-
 import Link from "next/link";
 import Image from "next/image";
 import ProjectInfo from "@/data/project";
@@ -20,7 +18,7 @@ import About from "@/components/About";
 export default function Component() {
   return (
     <div>
-      <About/>
+      <About />
       <div className="bg-gray-50/95 py-8 lg:py-16">
         <div className="grid gap-6 px-4 md:px-6">
           <div className="space-y-2 text-center">
@@ -39,7 +37,7 @@ export default function Component() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="absolute inset-0 bg-black/30 backdrop-blur z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <a href={project.href}>
+                  <Link className="h-8 w-8 mr-4" href={project.href}>
                     <Image
                       alt="Project thumbnail"
                       className="object-cover"
@@ -51,11 +49,13 @@ export default function Component() {
                       }}
                       width="500"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="grid gap-1">
                   <h3 className="text-xl font-semibold">{project.name}</h3>
-                  <div className="text-sm text-gray-500">{project.description}</div>
+                  <div className="text-sm text-gray-500">
+                    {project.description}
+                  </div>
                 </div>
               </div>
             ))}
@@ -69,7 +69,9 @@ export default function Component() {
               Languages and Skills
             </h2>
             <p className="text-gray-500 ">
-              {"I've learned a lot through mentors, peers, and hours of non-stop debugging. \n    Currently, these are the skills that I have learned and feel proficient in!"}
+              {
+                "I've learned a lot through mentors, peers, and hours of non-stop debugging. \n    Currently, these are the skills that I have learned and feel proficient in!"
+              }
             </p>
             <ul className="text-gray-500 list-disc">
               <li>React</li>
