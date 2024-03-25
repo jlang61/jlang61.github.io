@@ -10,12 +10,12 @@ export default function Component() {
     <nav className="fixed bg-gray-200 inset-x-0 top-0 z-50">
       <div className="px-4 md:px-6">
         <div className="flex h-14 items-center">
-          <Link className="h-8 w-8 mr-4" href="#">
+          <Link className="h-8 w-8 mr-4" href="/">
             <Image
               alt="Logo"
               className="rounded-full"
               height="32"
-              src="/placeholder.svg"
+              src="/home.png"
               style={{
                 aspectRatio: "32/32",
                 objectFit: "cover",
@@ -23,22 +23,26 @@ export default function Component() {
               width="32"
             />
           </Link>
+          <Link className="ml-6 font-bold hover:underline" href="/">
+            Justin&apos;s Portfolio
+          </Link>
           <nav className="ml-auto flex items-center space-x-4">
-            <Link className="font-semibold hover:underline" href="/">
-              Home
+            <Link className="font-semibold hover:underline" href="/life">
+              My Life
             </Link>
             <Link className="font-semibold hover:underline" href="/projects">
               Projects
             </Link>
-            <Link className="font-semibold hover:underline" href="/">
-              What
-            </Link>
+
             <Link
               className="font-semibold hover:underline"
               href="https://github.com/jlang61"
             >
               Github
             </Link>
+            <Link className="font-semibold hover:underline" href="/">
+              Miscellaenous Stuff
+              </Link>
           </nav>
         </div>
       </div>
