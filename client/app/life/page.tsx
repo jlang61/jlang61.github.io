@@ -3,6 +3,8 @@
  * @see https://v0.dev/t/id07a8AgS7e
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+"use client";
+import React from "react";
 import {
   CarouselItem,
   CarouselContent,
@@ -11,12 +13,32 @@ import {
   Carousel,
 } from "@/components/ui/carousel";
 import life from "@/data/life";
-import ProjectInfo from "@/data/project";
+import Timeline from "@/components/Timeline";
+// import ProjectInfo from "@/data/project";
 import Image from "next/image";
 
 export default function Component() {
+  const items = [
+    {
+      title: "May 1940",
+      cardTitle: "Dunkirk",
+      url: "http://www.history.com",
+      cardSubtitle:
+        "Men of the British Expeditionary Force (BEF) wade out to..",
+      cardDetailedText:
+        "Men of the British Expeditionary Force (BEF) wade out to..",
+      media: {
+        type: "IMAGE",
+        source: {
+          url: "http://someurl/image.jpg",
+        },
+      },
+    },
+    // Additional items can be added here...
+  ];
+
   return (
-    <div className="w-full py-12 lg:py-24">
+    <div className="w-full py-4 lg:py-4">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col gap-4 min-h-[400px] justify-center items-center space-y-4 text-center">
           <div className="space-y-2">
@@ -32,16 +54,17 @@ export default function Component() {
             </p>
           </div>
         </div>
+
         <div className="grid lg:grid-cols-1 xl:grid-cols-2">
-            <div className="col-span-1">
-                my life 
-            </div>
-          <div className="mx-auto max-w-3xl px-4 col-span-1">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
             My Childhood
+          </h1>
+          <Timeline></Timeline>
+          <div className="mx-auto max-w-3xl px-4 col-span-1">
             <Carousel>
               <CarouselContent>
                 {life.map((event: any) => (
-                  <CarouselItem key={event.id} className="flex justify-center" >
+                  <CarouselItem key={event.id} className="flex justify-center">
                     <Image
                       alt="Life events"
                       className="object-cover rounded-lg"
@@ -52,7 +75,6 @@ export default function Component() {
                         objectFit: "cover",
                       }}
                       width={500}
-                      
                     />
                   </CarouselItem>
                 ))}
