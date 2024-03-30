@@ -12,6 +12,13 @@ const ProjectInfo = [
         description: "The UCSB Taiwanese American Student Association website is your central source for gallery updates, event details, and community news. Experience vibrant visuals, stay informed about upcoming events, and get the latest updates—all in one convenient platform. Celebrate Taiwanese culture and community with us at UCSB!",
         href: "https://ucsbtasa.com",
         imageRef: "/tasa.png",
+    },
+    {
+        id: 3,
+        name: "UCrave",
+        description: "This user-friendly platform taps into UCSB’s dining hall data, enabling users to effortlessly search for their favorite entrees available today, tomorrow, or even over the next week. Whether you’re craving a hearty meal or exploring culinary options, UCSB Dining Delight has you covered! ",
+        href: "https://ucsb-food.vercel.app",
+        imageRef: ""
     }
 ]
 
