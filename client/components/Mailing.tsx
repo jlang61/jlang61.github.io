@@ -65,6 +65,7 @@ export default function Mailing() {
       } else if (oneTime == 0) {
         console.error("Can only send one email at a time");
         setSubmissionStatus("oneTime");
+        console.log(submissionStatus)
       } else {
         console.error(
           "One or more emailjs environment variables are undefined."
