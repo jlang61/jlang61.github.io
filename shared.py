@@ -126,47 +126,20 @@ print(len(total_titles))
 print(len(total_creations))
 pd_creations = pd.DataFrame({"Creation Time": total_creations, "Titles": total_titles})
 print(pd_creations)
-# # Iterate through shared albums
-# for album in shared_albums:
-#     # Check if the album has a title and cover photo media item ID
-#     if 'title' in album and 'coverPhotoMediaItemId' in album:
-#         # Fetch creation time for the cover photo and append to temp_creations list
-#         creation_time = fetch_album_media(album['coverPhotoMediaItemId'], album['title'])
-#         temp_creations.append(creation_time)
-#         # Append album title to temp_titles list
-#         temp_titles.append(album['title'])
+pd_creations = pd_creations.sort_values("Creation Time")
+print(pd_creations)
+    
 
-# # Create DataFrame from the collected data
-# data = {'Creation Time': temp_creations, 'Titles': temp_titles}
-# df = pd.DataFrame(data)
 
-# # Display the DataFrame
-# print(df)
-    
-    # print(f"Fetching media items for album: {album['title']} (ID: {album_id})")
-    # extract_metadata(album_id)
-    
-    
-    
-# while True:
-#     albums_batch, next_page_token = fetch_shared_albums(next_page_token)
-#     shared_albums.extend(albums_batch)
-#     if not next_page_token:
-#         break
-# pd_shared = pd.DataFrame(shared_albums)
-# print(pd_shared.columns)
-
-# for album in shared_albums:
-#     print (album[])
-# print("import { title } from \"process\";")
-# print ("export const galleryImages2023_2024: GalleryImage[] = [")
-# for j in range(len(pd_shared)):
-#     i = len(pd_shared) - j - 1
-#     print("{")
-#     print ("id: ", j + 1)
-#     print ("title: \"", pd_shared.title[i], "\"", sep = '')
-#     url_title = str(pd_shared.title[i]).replace(' ', '_').lower()
-#     print ("imageUrl: \"/gallery_photos/2023-2024/", url_title, ".jpg\"", sep='')
-#     print ("link: \"", pd_shared.productUrl[i], "\"", sep ='')
-#     print("},")
-# print("]")
+print("import { title } from \"process\";")
+print ("export const galleryImages2023_2024: GalleryImage[] = [")
+for j in range(len(pd_shared)):
+    i = len(pd_shared) - j - 1
+    print("{")
+    print ("id: ", j + 1)
+    print ("title: \"", pd_shared.title[i], "\"", sep = '')
+    url_title = str(pd_shared.title[i]).replace(' ', '_').lower()
+    print ("imageUrl: \"/gallery_photos/2023-2024/", url_title, ".jpg\"", sep='')
+    print ("link: \"", pd_shared.productUrl[i], "\"", sep ='')
+    print("},")
+print("]")
