@@ -23,7 +23,7 @@ const greeting = {
   username: "Justin Lang",
   title: "Hi all, I'm Justin",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A passionate Full Stack Software Developer 🚀 having an experience of building Web applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
     "https://docs.google.com/document/d/1ViIutg6XwO7bQdp6ytemLizCobpnDBE69Z6S3_rU4fo/edit?usp=sharing", // Set to empty to hide the button
@@ -34,12 +34,12 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/jlang61",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
+  linkedin: "https://www.linkedin.com/in/justin-lang-966b0a256/",
   gmail: "justinlang8@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
+  // gitlab: "https://gitlab.com/saadpasta",
+  // facebook: "https://www.facebook.com/saad.pasta7",
+  // medium: "https://medium.com/@saadpasta",
+  // stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -180,7 +180,7 @@ const workExperiences = {
     {
       role: "Software Engineer Intern",
       company: "Huupe",
-      companylogo: require("./assets/images/quoraLogo.png"),
+      companylogo: require("./assets/images/huupe.jpg"),
       date: "July 2023 - September 2023",
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
@@ -194,7 +194,7 @@ const workExperiences = {
     {
       role: "Software Engineer Intern",
       company: "Huupe",
-      companylogo: require("./assets/images/facebookLogo.png"),
+      companylogo: require("./assets/images/huupe.jpg"),
       date: "July 2023 - September 2023",
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
