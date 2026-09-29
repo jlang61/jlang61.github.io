@@ -14,11 +14,11 @@
   --line: light-dark(#e2ded3, #262624);
   --line-strong: light-dark(#cdc8ba, #3a3a36);
 
-  --accent: light-dark(#e0521b, #ff7a45);
-  --accent-ink: light-dark(#b13f0f, #ff9468);
-  --accent-fill: light-dark(#c4460f, #ff7a45);
-  --on-accent: light-dark(#ffffff, #160a04);
-  --accent-soft: light-dark(#fbe5da, #2c160c);
+  --accent: light-dark(#2f4ce0, #5e9bff);
+  --accent-ink: light-dark(#2139c2, #8cb8ff);
+  --accent-fill: light-dark(#2a45d4, #5e9bff);
+  --on-accent: light-dark(#ffffff, #03122b);
+  --accent-soft: light-dark(#e3e7fb, #0f1e38);
   --teal: light-dark(#0b776d, #45cdbd);
   --teal-soft: light-dark(#d6eeea, #0f2a27);
   --ok: light-dark(#1b8f59, #3ccf8e);
@@ -112,8 +112,8 @@ em {
 }
 
 ::selection {
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-fill);
+  color: var(--on-accent);
 }
 
 :focus-visible {
