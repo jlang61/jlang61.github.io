@@ -1,0 +1,81 @@
+/* Printing the page yields a clean, résumé-like document. */
+@media print {
+  :root,
+  :root[data-theme] {
+    color-scheme: light;
+  }
+  @page {
+    margin: 14mm 14mm 16mm;
+  }
+  body {
+    background: #fff;
+    font-size: 10.5pt;
+  }
+  .nav,
+  .skip-link,
+  .hero::before,
+  .hero__visual,
+  .hero__cta,
+  .pipeline,
+  .project__visual,
+  .archive__query,
+  .archive__foot,
+  .contact__links,
+  .contact .icon-btn,
+  .palette,
+  .toast {
+    display: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero {
+    padding-top: 0;
+  }
+  .hero__grid,
+  .project {
+    grid-template-columns: 1fr;
+  }
+  .hero__name {
+    font-size: 42pt;
+  }
+  .stats {
+    margin-top: 16pt;
+  }
+  .section {
+    padding-top: 22pt;
+  }
+  .section__head {
+    margin-bottom: 12pt;
+  }
+  .role,
+  .project,
+  .school,
+  .archive__table tr {
+    break-inside: avoid;
+  }
+  .project,
+  .school,
+  .archive {
+    border-color: #ddd;
+    background: none;
+  }
+  .contact,
+  .footer {
+    --c-bg: #fff;
+    --c-ink: #111;
+    --c-ink-2: #444;
+    --c-ink-3: #666;
+    --c-line: #ddd;
+    --c-accent: #b13f0f;
+    margin-top: 24pt;
+    padding-block: 18pt;
+  }
+  .contact__title {
+    font-size: 28pt;
+  }
+  a {
+    text-decoration: none;
+  }
+}

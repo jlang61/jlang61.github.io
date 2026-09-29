@@ -1,0 +1,153 @@
+/* The <dialog> itself is the full-screen scrim; clicks on it (outside the
+   panel) close the menu. */
+.palette {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 12vh 16px 16px;
+  border: 0;
+  background: color-mix(in oklab, var(--bg-sunk) 60%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--ink);
+}
+.palette[open] {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  animation: palette-fade 0.18s ease-out;
+}
+.palette::backdrop {
+  background: transparent;
+}
+.palette__panel {
+  display: flex;
+  flex-direction: column;
+  width: min(620px, 100%);
+  max-height: min(560px, 76vh);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 40px 100px -30px var(--shadow-color);
+  animation: palette-in 0.22s var(--ease);
+}
+@keyframes palette-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+  }
+}
+.palette__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+.palette__search input {
+  flex: 1;
+  min-width: 0;
+  height: 58px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font: 16px var(--font-sans);
+}
+.palette__search input::placeholder {
+  color: var(--ink-3);
+}
+.palette__list {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 6px 8px 8px;
+}
+.palette__group {
+  padding: 12px 10px 6px;
+  color: var(--ink-3);
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.palette__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  color: var(--ink-2);
+  font-size: 15px;
+  cursor: pointer;
+}
+.palette__item.is-active {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.palette__icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink-3);
+}
+.palette__item.is-active .palette__icon {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.palette__label {
+  flex: 1;
+  min-width: 0;
+}
+.palette__hint {
+  max-width: 45%;
+  overflow: hidden;
+  color: var(--ink-3);
+  font: 12px var(--font-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.palette__empty {
+  padding: 28px 12px;
+  color: var(--ink-3);
+  text-align: center;
+}
+.palette__footer {
+  display: flex;
+  gap: 18px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.palette__footer kbd {
+  margin-right: 3px;
+}
+
+@media (max-width: 640px) {
+  .palette {
+    padding: 10px;
+  }
+  .palette__panel {
+    max-height: calc(100dvh - 20px);
+  }
+  .palette__footer {
+    display: none;
+  }
+  .palette__hint {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+# Justin Lang
+
+> Software engineer working on databases, storage engines, and infrastructure. M.S. Computer Science student at UC San Diego (Sep 2026 – Jun 2028), seeking Summer 2027 internships in databases and systems. Contact: justinlang8@gmail.com.
+
+## Links
+
+- [Résumé (PDF)](https://jlang61.github.io/Justin_Lang_Resume.pdf)
+- [GitHub](https://github.com/jlang61)
+- [LinkedIn](https://www.linkedin.com/in/justin-lang-966b0a256/)
+- [Avalution source](https://github.com/jlang61/avalution): on-disk Merkle trie storage engine
+
+## Experience
+
+- **NICE Actimize**, Software Engineer, R&D, Agentic AI for Fraud Detection (Oct 2025 – Jul 2026). Co-designed and later solely owned a report engine that turns a single SQL query into a deployable agent; ~50 agents built on it, 5 shipped to production. Solely owned an anomalous-activity agent and a live configuration system in production. Designed the SQL schema for agent configurations and report definitions. Wrote Helm charts and resource limits for agent services on Kubernetes.
+- **Huupe**, Software Engineer Intern (Summers 2023, 2024). Architected a distributed WebSocket messaging layer on Redis Pub/Sub across multiple Node.js API instances; built the backend API for a smart basketball hoop and refactored 50+ blocking calls to async.
+
+## Projects
+
+- **Avalution** (UCSB Capstone with Ava Labs, Go): stores authenticated blockchain state as a Merkle trie directly on disk; 40% faster than LevelDB on an 80/20 read/write workload. Owned the disk manager, revision manager, and a power-of-two free-list allocator.
+- **Cetacean Distribution Modeling** (with Scripps Institution of Oceanography, R): spatio-temporal GLMMs fusing acoustic, visual, and eDNA data; Best Data Methods Award.
+
+## Education
+
+- University of California, San Diego: M.S. Computer Science (expected Jun 2028)
+- University of California, Santa Barbara: B.S. Computer Science, Minor in Statistics & Applied Probability (Jun 2025), GPA 3.94, High Honors, Distinction in the Major

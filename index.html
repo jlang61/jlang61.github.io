@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Justin Lang: Software Engineer, Databases & Systems</title>
+    <meta
+      name="description"
+      content="Justin Lang is an M.S. Computer Science student at UC San Diego working on databases, storage engines, and infrastructure. Previously Software Engineer, R&D at NICE Actimize. Seeking Summer 2027 internships."
+    />
+    <meta name="author" content="Justin Lang" />
+    <link rel="canonical" href="https://jlang61.github.io/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://jlang61.github.io/" />
+    <meta property="og:title" content="Justin Lang: Software Engineer, Databases & Systems" />
+    <meta
+      property="og:description"
+      content="Storage engines, SQL schema design, and the infrastructure that takes AI agents to production. M.S. CS at UC San Diego."
+    />
+    <meta property="og:image" content="https://jlang61.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)" />
+
+    <script>
+      // Apply a saved theme before first paint so there is no flash.
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "light" || t === "dark") d.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Justin Lang",
+        "url": "https://jlang61.github.io/",
+        "jobTitle": "Software Engineer",
+        "email": "mailto:justinlang8@gmail.com",
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "University of California, Santa Barbara" }
+        ],
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "University of California, San Diego" },
+        "sameAs": [
+          "https://github.com/jlang61",
+          "https://www.linkedin.com/in/justin-lang-966b0a256/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
+  </body>
+</html>

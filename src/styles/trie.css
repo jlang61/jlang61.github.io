@@ -1,0 +1,199 @@
+.trie {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px);
+  background: var(--surface);
+  box-shadow:
+    0 1px 0 var(--line),
+    0 40px 80px -40px var(--shadow-color);
+}
+.trie__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-3);
+  font: 12px/1.4 var(--font-mono);
+}
+.trie__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-2);
+}
+.trie__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent);
+  animation: ping 2s var(--ease) infinite;
+}
+.trie__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 16px 10px 6px;
+  overflow: visible;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.trie__edge path {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.25;
+  transition: stroke 0.2s;
+}
+.trie__edge.is-path path {
+  stroke: var(--accent);
+  stroke-width: 1.75;
+}
+.trie__bit {
+  fill: var(--ink-3);
+  font: 10px var(--font-mono);
+}
+.trie__edge.is-path .trie__bit {
+  fill: var(--accent-ink);
+}
+
+.trie__box {
+  fill: var(--surface);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition:
+    fill 0.2s,
+    stroke 0.2s;
+}
+.trie__hash {
+  fill: var(--ink-2);
+  font: 500 12.5px var(--font-mono);
+  pointer-events: none;
+}
+.trie__flash {
+  fill: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: trie-flash 0.9s var(--ease);
+}
+@keyframes trie-flash {
+  from {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.trie__node.is-root .trie__box {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+.trie__node.is-root .trie__hash {
+  fill: var(--bg);
+  font-size: 13px;
+}
+
+.trie__node.is-path .trie__box {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+.trie__node.is-proof .trie__box {
+  fill: var(--teal-soft);
+  stroke: var(--teal);
+  stroke-width: 1.5;
+}
+.trie__node.is-proof .trie__hash {
+  fill: var(--teal);
+}
+
+.trie__node.is-leaf {
+  cursor: pointer;
+  outline: none;
+}
+.trie__hit {
+  fill: transparent;
+}
+.trie__node.is-leaf:hover .trie__box {
+  fill: var(--accent-soft);
+}
+.trie__node.is-leaf:focus-visible .trie__box {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+.trie__key {
+  fill: var(--ink-3);
+  font: 10.5px var(--font-mono);
+}
+.trie__val {
+  fill: var(--ink);
+  font: 600 13px var(--font-mono);
+}
+
+.trie__console {
+  min-height: calc(4 * 1.75em + 24px);
+  padding: 11px 14px 13px;
+  border-top: 1px solid var(--line);
+  background: var(--bg-sunk);
+  color: var(--ink-3);
+  font: 12px/1.75 var(--font-mono);
+}
+.trie__line {
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+}
+.trie__line:nth-child(2) {
+  color: var(--ink);
+}
+.trie__line:nth-child(3) {
+  color: var(--ink-2);
+}
+.trie__prompt {
+  display: inline-block;
+  min-width: 6ch;
+  color: var(--accent-ink);
+}
+.trie__line--proof,
+.trie__line--proof .trie__prompt {
+  color: var(--teal);
+}
+.trie__arrow {
+  color: var(--ink-3);
+}
+
+.trie__hint--touch {
+  display: none;
+}
+@media (hover: none) {
+  .trie__hint--pointer {
+    display: none;
+  }
+  .trie__hint--touch {
+    display: inline;
+  }
+}
+
+/* The SVG scales down with the card; enlarge its type on phones so the
+   hashes stay legible (sizes are in viewBox units). */
+@media (max-width: 560px) {
+  .trie__svg {
+    padding-inline: 4px;
+  }
+  .trie__hash,
+  .trie__node.is-root .trie__hash {
+    font-size: 15.5px;
+  }
+  .trie__key {
+    font-size: 12.5px;
+  }
+  .trie__val {
+    font-size: 15px;
+  }
+  .trie__bit {
+    display: none;
+  }
+}
